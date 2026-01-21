@@ -26,8 +26,22 @@ div{
     display: block;
     unicode-bidi: isolate;
 }
+
+h2{
+    font-size: 56px;
+}
+
+h3{
+    font-size: 36px;
+}
+
+p{
+    font-size: 24px;
+}
+
 a{
     text-decoration: none;
+    cursor: pointer;
 }
 a:hover{
     text-decoration: underline;
@@ -93,12 +107,14 @@ nav{
 
 .link {
     margin: 0 24px;
-    padding: 8px auto;
+    padding-top: 8px;
     padding-bottom: 4px;
     font-size: 24px;
-    font-weight:800;
+    font-weight:600;
     letter-spacing: 0.6px;
+    border-bottom: 2px solid transparent;
     position: relative;
+    transition: all 300ms;
     align-items: center;
 }
 .link:hover {
@@ -107,10 +123,18 @@ nav{
     text-decoration-thickness: 2px;
 }
 .link--primary {
-    border: 2px solid #7342d6;
-    border-radius: 4px;
-    border-style: hidden;
+    margin: 0;
+    padding: 10px 32px;
+    margin-top: 2px;
+    border-radius: 9999px;
+    color: #fff;
+    background-color: #6415ff;
+    line-height: 1.5;
+    border: none;
+    width: auto;
+    transition: all 300ms ease;
 }
+
 /***HEADER BOX****/
 
 .header__container {
@@ -122,29 +146,83 @@ nav{
 
 .row__column {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
 }
-
-.header__container--description {
+.header__description {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
     max-width: 40%;
 }
 .header__container--slogan{
     font-size: 48px;
     font-weight: bold;
 }
-.header__title--customer{
+.header__customers--title{
+    width: 100%;
     margin: 16px 0; 
     flex-wrap: wrap;
 }
-
-
-.header__container--img {
-   max-width: 60%;
+.header__email--input{
+    max-width: 60%;
+    border-radius: 500px;
+    border: 2px solid rgb(229, 231, 235);
+    color: rgb(36, 62, 99);
+    font-size: 16px;
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    transition:border-color 300ms;
 }
+.header__email--btn{
+    line-height: 1.5;
+    padding: 16px 0px;
+    margin: 16px 0px;
+    z-index: 2;
+    height: calc(100%-16px);
+    width: 160px;
+    max-width: 100%;
+    background-color: rgb(100, 21, 255);
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 500px;
+    border-width: initial;
+    border-style: none;
+    border-image: initial;
+    transition: 300ms;
 
-.header__img--wrapper img {
-  width: 100%;
+}
+.header__email--btn:hover{
+    background-color: rgba (60, 13, 153);
+}
+.header__title--para{
+    margin: 20px 0;
+    font: 32px;
+    color: #243e63;
+
+}
+.header__customers--title{
+    max-width: 100%;
+    color: #a0aec0;
+    margin: 48px 0;
+}
+.header__customers {
+    max-width: 100%;
+    margin-top: 16px;
+    padding-right: 64px;
+    opacity: 0.5;
+
+}
+.header__img--wrapper {
+    max-width: 100%;
+}
+.header__img {
+    width: 100%;
 }
