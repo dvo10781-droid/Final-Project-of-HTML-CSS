@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,56 +10,72 @@
 </head>
 
 <body>
-    <section id="landing">
-      <nav>
-        <div class="nav__row">   
-          <div class="nav__logo">
-            <img class="nav__logo--img" src="./Dixie_Assests/logo.svg" alt="Treact Logo">
-            <div class="nav__logo--title">Treact</div>
-          </div>
-          <div class="row nav__links">
-            <a href="#" class="link">About</a>
-            <a href="#" class="link">Blog</a>
-            <a href="#" class="link">Pricing</a>
-            <a href="#" class="link">Contact Us</a>
-            <a href="#" class="link">Login</a>
-            <a href="#" class="link link--primary">Sign Up</a>
-          </div>
-        </div>
-      </nav>
-      <header id="header">
-        <div class="container">
-          <div class="row container__row">
-            <div class="header__description">
-              <h1>
-                Beautiful React Templates <span class="purple">for you.</span>
-              </h1>
-              <p class="header__description--para">
-                Our templates are easy to setup, understand and customize. Fully modular components with a variety of pages and components.
-              </p>
-              <div class="header__email">
-                <input type="text" class="header__email--input" placeholder="Your E-mail Address" />
-                <button class="header__email--btn">Get Started</button>
-              </div>
-              <h2 class="header__customers--title">Our Trusted Customers</h3>
-                <img class="header__customers--logo"
-                  src="Dixie_Assests/customers-logo-strip.png"
-                  alt="customers logo" />
+  <section id="landing">
+    <nav aria-label="Main navigation">
+      <div class="nav__container">   
+        <a href="/" class="nav__logo" aria-label="Treact Home">
+          <img class="nav__logo-img" src="./Dixie_Assests/logo.svg" alt="">
+          <span class="nav__logo-title">Treact</span>
+        </a>
+        <ul class="nav__links">
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#blog" class="nav__link">Blog</a></li>
+          <li><a href="#pricing" class="nav__link">Pricing</a></li>
+          <li><a href="#contact" class="nav__link">Contact Us</a></li>
+          <li><a href="#login" class="nav__link">Login</a></li>
+          <li><a href="#signup" class="nav__link nav__link--primary">Sign Up</a></li>
+        </ul>
+        <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="nav__toggle-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    <header id="header">
+      <div class="container">
+        <div class="header__row">
+          <div class="header__content">
+            <h1 class="header__title">
+              Beautiful React Templates <span class="header__title--highlight">for you.</span>
+            </h1>
+            <p class="header__description">
+              Our templates are easy to setup, understand and customize. Fully modular components with a variety of pages and components.
+            </p>
+            
+            <form class="header__form" action="/subscribe" method="post">
+              <label for="email" class="sr-only">Email Address</label>
+              <input 
+                type="email" 
+                id="email"
+                name="email"
+                class="header__input" 
+                placeholder="Your E-mail Address"
+                required 
+                aria-required="true"
+              />
+              <button type="submit" class="header__btn">Get Started</button>
+            </form>
+
+            <div class="header__customers">
+              <h2 class="header__customers-title">Our Trusted Customers</h2>
+              <img 
+                class="header__customers-logo"
+                src="./Dixie_Assests/customers-logo-strip.png"
+                alt="Logos of trusted customer companies"
+              />
             </div>
-            <figure class="description__img--wrapper">
-                <img class="description__img" src="./Dixie_Assests/design-illustration-2.svg" alt="landing page img" />
-              </figure>
           </div>
+
+          <figure class="header__figure">
+            <img 
+              class="header__img" 
+              src="./Dixie_Assests/design-illustration-2.svg" 
+              alt="Modern design illustration showing interface components and user experience elements"
+            />
+          </figure>
         </div>
-      </header>
-
-
-      </section>
-</body>
-<header>
-  <section id="AboutUs">
-    <div class="row nav_row">
-
-    </div>
+      </div>
+    </header>
   </section>
-</header>
+</body>
+
