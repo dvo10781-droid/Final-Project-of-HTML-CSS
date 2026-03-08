@@ -19,6 +19,11 @@ body {
  color:#6415ff;
 }
 
+h2 {
+    font-size: 48px;
+    font-weight: 900;
+    font-style: bold;
+}
 h3{
     font-size: 32px;
     font-weight: 700;
@@ -270,44 +275,92 @@ nav {
 
 /****FEATURES
 *****/
+#feature .row__narrow{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .features__container{
-    padding: 80px 0;
+    padding: 96px 0;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
+.row__narrow {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.features__section--tag {
+    font-size: 36px;
+    color: #6415ff;
+    letter-spacing: 1.6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
 
+}
 .features__section--title {
-    font-size: 48px;
+    font-size: 81px;
     font-weight: 900;
+    color: rgb(36, 62, 99);
     line-height: 1.5;
     margin: 16px 0;
-    letter-spacing: 0.02rem;
+    letter-spacing: 0.025rem;
     text-align: center;
 }
 .features__section--para{
-    font-size: 18px;
+    font-size: 32px;
     font-weight: 500;
     color: #7C8BA1;
     line-height: 1.625;
     text-align: center;
+    align-items: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1020px;
 }
-.features__row{
+.features{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+.feature__row{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap'\;
+    padding: 32px 24px;
+    align-items: flex-start;
 }
 .feature{
     width: calc(100%/3);
     padding: 32px 24px;
 }
 .feature__img--wrapper{
-    align-items: flex-start;
+    display: flex;
     padding: 20px;
     border: 1px solid #e5e7eb;
-    border-radius: 500px
+    border-radius: 500px;
+    align-items: center;
+    justify-content: center;
+}
+.feature__img {
+    width: 24px;
+    height: 24px;
+}
+
+.feature__text {
+    margin-top: 8px;
+    margin-left: 16px;
+}
+.feature__title {
+    color: #243e63;
+}
+.feature__para {
+    margin-top: 16px;
+    font-size: 24px;
+    color: rgb(124, 139, 161);
+    line-height: 2;
+    font-weight: 400;
 }
 /* Responsive Design */
 @media (max-width: 1280px) {
