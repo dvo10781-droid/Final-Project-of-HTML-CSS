@@ -54,7 +54,7 @@ section {
 
 }
 .section__title {
-    font-size: 72px;
+    font-size: 64px;
     font-weight: 900;
     color: rgb(36, 62, 99);
     line-height: 1.5;
@@ -70,7 +70,7 @@ section {
     text-align: left;
     align-items: center;
     width: 100%;
-    max-width: 1020px;
+    max-width: 780px;
 }
 /* Screen Reader Only */
 .sr-only {
@@ -330,7 +330,7 @@ nav {
 .feature__row{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap'\;
+    flex-wrap: wrap;
     padding: 32px 24px;
     align-items: flex-start;
 }
@@ -503,6 +503,93 @@ g {
   margin-top: 12px;
   font-weight: 500;
   line-height: 2;
+}
+
+/**** VALUES
+*****/
+#values .values__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.values__row {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.values__description, .values__img{
+  width: 50%;
+}
+.values__description {
+  padding: 32px 64px 32px 0;
+}
+.values__list {
+  margin-left: 0px;
+  margin-right: 0px;
+  display: flex;
+  max-width:none;
+  flex-direction: row;
+}
+.value {
+  margin-top: 32px;
+  margin-right: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.value:nth-child(1) .value__img--wrapper {
+  background-color:#9ae6b4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+}
+.value__title {
+  display: flex;
+  align-items: center;
+}
+.value__name {
+  margin-left: 12px;
+  font-size: 36px;
+  font-weight: 700;
+  color: #243e63;
+}
+.value__para {
+  margin-top: 16px;
+  line-height: 1.625;
+  color: #718096;
+  font-size: 24px;
+}
+.value:nth-child(2) .value__img--wrapper {
+  background-color:#feb2b2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+}
+.values__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#values .btn{
+  margin-top: 48px;
+}
+.btn{
+  background-color:#6415ff;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 500px;
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+  transition: all 300ms ease;
+  cursor: pointer;
 }
 /* Responsive Design */
 @media (max-width: 1280px) {
