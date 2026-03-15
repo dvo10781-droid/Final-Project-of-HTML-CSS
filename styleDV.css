@@ -54,7 +54,7 @@ section {
 
 }
 .section__title {
-    font-size: 64px;
+    font-size: 72px;
     font-weight: 900;
     color: rgb(36, 62, 99);
     line-height: 1.5;
@@ -216,7 +216,7 @@ nav {
 }
 
 .header__description {
-  font-size: 20px;
+  font-size: 32px;
   color: #243e63;
   margin-bottom: 48px;
   line-height: 1.8;
@@ -512,6 +512,9 @@ g {
   justify-content: space-between;
   align-items: center;
 }
+#values .section__para{
+  text-align: left;
+}
 .values__row {
   width: 100%;
   max-width: 1280px;
@@ -591,6 +594,38 @@ g {
   transition: all 300ms ease;
   cursor: pointer;
 }
+
+/****PRICING*****/
+#pricing .pricing__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#pricing .section__title, .section__para{
+  margin: 0 auto;
+  text-align: center;
+}
+#pricing .section__title{
+  width: 100%;
+  max-width: 1280px;
+}
+#pricing .section__para{
+  max-width: 900px;
+
+}
+.pricing__row{
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.pricing__plans{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
 /* Responsive Design */
 @media (max-width: 1280px) {
   .container {
