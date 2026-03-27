@@ -602,7 +602,7 @@ g {
   flex-direction: column;
   align-items: center;
 }
-#pricing .section__title, .section__para{
+#pricing .ssection__tag .section__title .section__para{
   margin: 0 auto;
   text-align: center;
 }
@@ -628,7 +628,7 @@ g {
 }
 .plans:nth-child(1), .plan__stripe, .plan__btn{
   color: #f7fafc;
-  background-color: linear-gradient(115deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
+  background: linear-gradient(115deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
 }
 .plan__stripe {
   position: absolute;
@@ -699,11 +699,6 @@ g {
   color: #718096;
   letter-spacing: 0.1em;
 }
-.plans:nth-child(1) .plan__middle, .plans:nth-child(3) .plan__middle{
-  border-top: 2px solid rgb(229, 231, 235);
-  border-bottom: 2px solid rgb(229, 231, 235);
-}
-
 .plan__middle {
   margin-left: -2rem;
   margin-right: -2rem;
@@ -754,23 +749,63 @@ button {
   text-transform: uppercase;
   letter-spacing: .05em;
 }
+/*** card 1***/
+.plans:nth-child(1) {
+  background: #ffffff;
+}
+.plans:nth-child(1) .plan__stripe {
+  background: linear-gradient(115deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
+}
+.plans:nth-child(1) .plan__btn {
+  background: linear-gradient(115deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
+  color: #f7fafc;
+}
+.plans:nth-child(1) .plan__middle {
+  border-top: 2px solid rgb(229, 231, 235);
+  border-bottom: 2px solid rgb(229, 231, 235);
+}
+/***card 2***/
+ 
 .plans:nth-child(2) .plan__middle {
-  border-top: 2px solid rgb(102, 126, 234);
-  border-bottom: 2px solid rgb(102, 126, 234);
+  border-top: 2px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
 }
 .plans:nth-child(2){
-  background-color: linear-gradient(135deg, rgb(76, 81, 191) 0%, rgb(102, 126, 234) 100%);
+  background: linear-gradient(135deg, rgb(76, 81, 191) 0%, rgb(102, 126, 234) 100%);
+  transform: scale(1.03);
+  z-index: 2;
 }
 
+ /*** text in card 2 is white***/
+.plans:nth-child(2) .plan__type,
+.plans:nth-child(2) .plan__price,
+.plans:nth-child(2) .plan__target,
+.plans:nth-child(2) .plan__feature {
+  color: #ffffff;
+}
 .plans:nth-child(2) .plan__btn {
   color: #6415ff;
-  background-color: #f7fafc;;
+  background: #f7fafc;
+}
+.plans:nth-child(2) .plan__duration {
+  color: rgba(255, 255, 255, 0.7);  /* slightly muted white, like the design */
 }
 
+/***card 3***/
 .plans:nth-child(3) .plan__stripe {
   color:#f7fafc;
-  background-color: linear-gradient(135deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178) 100%);
+  background: linear-gradient(135deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178) 100%);
 }
+.plans:nth-child(3) .plan__middle {
+  border-top: 2px solid rgb(229, 231, 235);
+  border-bottom: 2px solid rgb(229, 231, 235);
+}
+.plans:nth-child(3) .plan__btn{
+ background: linear-gradient(135deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178) 100%);
+}
+
+/****START*****/
+
 
 /* Responsive Design */
 @media (max-width: 1280px) {
