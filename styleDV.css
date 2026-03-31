@@ -609,7 +609,7 @@ g {
   flex-direction: column;
   align-items: center;
 }
-#pricing .ssection__tag .section__title .section__para{
+#pricing .section__tag .section__title .section__para{
   margin: 0 auto;
   text-align: center;
 }
@@ -1168,22 +1168,10 @@ img {
   width: 16px;
 }
 
-@media (max-width: 768px) {
-  .starts__row {
-    padding: 50px 30px;
-  }
 
-  .start__row {
-    flex-direction: column;
-    text-align: center;
-    gap: 28px;
-  }
 
-  .start__quote {
-    font-size: 1.25rem;
-  }
-}
-/***** Responsive Design */
+/*******************For SMALL DEVICES***********************/
+
 @media (max-width: 1280px) {
   .container {
     padding: 40px;
@@ -1221,6 +1209,20 @@ img {
 }
 
 @media (max-width: 768px) {
+
+  .starts__row {
+    padding: 50px 30px;
+  }
+
+  .start__row {
+    flex-direction: column;
+    text-align: center;
+    gap: 28px;
+  }
+
+  .start__quote {
+    font-size: 1.25rem;
+  }
   .nav__links {
     display: none;
   }
