@@ -19,6 +19,11 @@ body {
  color:#6415ff;
 }
 
+h1 {
+  font-size: 48px;
+  color: #1a202c;
+  line-height: 1.25;
+}
 h2 {
     font-size: 48px;
     font-weight: 900;
@@ -36,6 +41,13 @@ h4{
     text-align: center;
 }
 
+.container{
+    padding: 96px 0;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
 section {
   padding: 0 32px;
 }
@@ -43,6 +55,13 @@ a{
   display: inline;
   text-decoration: none;
 }
+
+.row{
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 .row__narrow {
     width: 100%;
     max-width: 1024px;
@@ -89,13 +108,6 @@ a{
   border-width: 0;
 }
 
-/* Container */
-.header__container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 48px;
-  width: 100%;
-}
 .container{
     padding: 96px 0;
     width: 100%;
@@ -108,17 +120,14 @@ a{
   min-height: 100vh;
 }
 
-/***********************NAVIGATION BAR*********************************/
+/*---------------*NAVIGATION BAR*------------------*/
 nav {
   padding-top: 32px;
   display: flex;
   background-color: #ffffff;
 }
 
-.nav__container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
+.nav__row {
   padding: 0 48px;
   display: flex;
   justify-content: space-between;
@@ -128,7 +137,8 @@ nav {
 .nav__logo {
   display: flex;
   align-items: center;
-  gap: 16px;
+  margin: 8px 0;
+  padding-bottom: 4px;
   text-decoration: none;
   transition: opacity 0.3s ease;
 }
@@ -137,14 +147,16 @@ nav {
   opacity: 0.8;
 }
 
-.nav__logo-img {
+.nav__logo--img {
   width: 50px;
   height: 50px;
 }
 
-.nav__logo-title {
+.nav__logo--title {
   font-size: 30px;
   font-weight: 900;
+  margin-left: 12px;
+  padding-bottom: 2px;
   color: #243e63;
   letter-spacing: 0.8px;
 }
@@ -152,16 +164,21 @@ nav {
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 56px;
+  padding-bottom: 2px;
   list-style: none;
 }
 
 .nav__link {
+  margin: 0 24px;
   text-decoration: none;
   color: #243e63;
   font-size: 16px;
   font-weight: 600;
-  transition: color 0.3s ease;
+  padding-top: 4px;
+  letter-spacing: 0.35px;
+  border-bottom: 2px solid transparent;
+  transition: all 300ms ease;
+  position: relative;
   white-space: nowrap;
 }
 
@@ -171,6 +188,11 @@ nav {
 }
 
 .nav__link--primary {
+  margin: 0;
+  margin-top: 2px;
+  line-height: 1.5;
+  border: none;
+  width: auto;
   background-color: #6415ff;
   color: #ffffff;
   padding: 14px 40px;
@@ -185,139 +207,147 @@ nav {
   box-shadow: 0 10px 25px rgba(100, 21, 255, 0.3);
 }
 
-.nav__toggle {
+.menu {
   display: none;
-  background: none;
-  border: none;
+}
+button {
   cursor: pointer;
+  border: none;
+}
+.btn__menu {
+  display: none;
+  background-color: transparent;
+  transition: all 300ms ease;
   padding: 8px;
 }
 
-/* Header */
-#header {
+/********* HEADER SECTION - HERO SECTION *************/
+
+header {
+  position: relative;
   padding: 128px 0 96px;
 }
 
-.header__row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 96px;
+header .row {
+  display: flex;
+  justify-content: space-between ;
   align-items: center;
 }
-
+/***------***header content/descriptions***------***/
 .header__content {
+  width: 40%;
   max-width: 512px;
 }
 
-.header__title {
-  font-size: 60px;
-  font-weight: 900;
-  line-height: 1.25;
-  color: #1a202c;
-  margin-bottom: 32px;
-}
+.purple {color: #6415ff;}
 
-.header__title--highlight {
-  color: #6415ff;
-}
-
-.header__description {
-  font-size: 32px;
+.header__para {
   color: #243e63;
   margin-bottom: 48px;
   line-height: 1.8;
   max-width: 550px;
 }
 
-/* Form */
-.header__form {
+/***------***header form -for potential customers email input***------***/
+.header__email {
+  width: 100%;
+  max-width: 448px;
+  height: 68px;
   display: flex;
-  gap: 0;
+  justify-content: flex-end;
   margin-bottom: 96px;
   position: relative;
-  max-width: 650px;
+  align-items: center;
 }
 
-.header__input {
-  flex: 1;
-  padding: 24px 40px;
-  border: 2px solid #e5e7eb;
-  border-radius: 9999px;
+.header__email--input {
+  width: 100%;
+  border-radius: 500px;
+  border: 2px solid rgb(229, 231, 235);
+  padding: 20px 192px 24px 32px;
+  color: rgb(36, 62, 99);
+  position: absolute;
   font-size: 18px;
-  outline: none;
-  transition: all 0.3s ease;
-  padding-right: 208px;
+  font-weight: 500;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  transition: border-color 0.3s ease;
 }
 
-.header__input:focus {
+.header__email--input:hover {
   border-color: #6415ff;
   box-shadow: 0 0 0 3px rgba(100, 21, 255, 0.1);
 }
 
-.header__input::placeholder {
+.header__email--input::placeholder {
   color: #a0aec0;
   font-weight: 500;
 }
 
-.header__btn {
+.header__email--btn {
+  z-index: 2;
+  margin: 8px;
+  height: calc(100%-16px);
+  border-radius: 500px;
+  width: 160px;
+  border: none;
+  background-color: #6415ff;
+  color: #fff;
   position: absolute;
+  font-weight: 700;
+  font-size: 18px;
   right: 8px;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #6415ff;
-  color: #ffffff;
-  border: none;
   padding: 18px 48px;
-  border-radius: 9999px;
-  font-size: 18px;
-  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
   white-space: nowrap;
 }
 
-.header__btn:hover {
+.header__email--btn:hover {
   background-color: #5011cc;
   transform: translateY(-50%) translateY(-2px);
   box-shadow: 0 10px 25px rgba(100, 21, 255, 0.3);
 }
 
-.header__btn:active {
+.header__email--btn:active {
   transform: translateY(-50%) translateY(0);
 }
 
-/* Customers */
-.header__customers {
-  margin-top: 96px;
-}
+ /*******Header - Customers */
 
-.header__customers-title {
-  font-size: 14px;
+.header__customers--title {
+  font-size:18px;
   font-weight: 700;
   color: #a0aec0;
   text-transform: uppercase;
   letter-spacing: 1.6px;
-  margin-bottom: 24px;
+  margin-top: 80px;
 }
 
-.header__customers-logo {
+.header__customers--logo {
   width: 100%;
   max-width: 550px;
+  margin-top: 16px;
+  padding-right: 64px;
   opacity: 0.5;
   filter: grayscale(100%);
 }
 
-/* Figure */
-.header__figure {
-  max-width: calc(1280px*60%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/******* HEADER IMAGE *******/
+.header__img--wrapper {
+  width: calc(100% - 40%);
 }
 
+img {
+  width: 100%;
+}
 .header__img {
-  width: 648px;
-  height: auto;
+  max-width: 768px;
+  width: 100%;
+
 }
 /********************************MAIN CONTENT******************************/
 main{
@@ -513,8 +543,7 @@ g {
   line-height: 2;
 }
 
-/**** VALUES
-*****/
+/****************************** VALUES**************************/
 #values .values__row {
   display: flex;
   justify-content: space-between;
@@ -1124,11 +1153,7 @@ footer {
 }
 .footer__logo {
   display: flex;
-  align-items: center;;
-}
-
-img {
-  width: 100%;
+  align-items: center;
 }
 .footer__logo--img{
   height: 32px;
@@ -1169,143 +1194,411 @@ img {
 }
 
 
-
-/*******************For SMALL DEVICES***********************/
-
+/**************************RESPONSIVE DESIGN - MEDIA QUERIES**************************/
 @media (max-width: 1280px) {
-  .container {
-    padding: 40px;
-  }
+h1 {
+  font-size: 42px;
+  color: #1a202c;
+  line-height: 1.25;;
+}
+  header .row{ align-items: flex-end; }
+  .header__para { font-size: 18px; margin: 20px 0; }
+  .header__customers--logo { padding-right: 64px; }
+  .header__img--wrapper { display: flex; justify-content: flex-end; }
+  .header__img { max-width: 512px; }
 
-  .nav__container {
-    padding: 0 40px;
-  }
-
-  .header__row {
-    gap: 64px;
-  }
-
-  .header__title {
-    font-size: 52px;
-  }
 }
 
+/*----------------*For SMALL DEVICES*************
+                    *************************SCREEN WITH 1024PX------------------*/
 @media (max-width: 1024px) {
-  .nav__links {
-    gap: 40px;
+
+  h1{  font-size: 32px;  }
+
+  /***Navigation Bar****/
+  nav {position: relative;}
+  .nav__container,  header .container {padding: 0 40px} 
+  .nav__links {display: none; gap: 32px;}
+  .btn__menu{ 
+    background-color: transparent;
+    position: relative;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  .btn__menu:hover {
+    background-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(26, 32, 44, 0.3);
   }
 
-  .header__row {
-    gap: 48px;
+  /***------***Header***------***/
+  header .row  { flex-direction: column; align-items: center; gap: 64px; }
+  .header__content {
+    width: 100%;
+    max-width: 512px;
+    margin: 0 auto;
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;}
+  .header__para { font-size: 16px; text-align: center;}
+
+  /* ── Header customer input email form @ 1024px and below ── */
+  .header__email {
+    flex-direction: row;   /* keep side by side */
+    height: 60px;
+    align-items: center;
+    position: relative;
   }
 
-  .header__title {
-    font-size: 44px;
+  .header__email--input {
+    position: absolute;    /* stays absolute — fills the whole bar */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 16px 180px 16px 24px;  /* right padding makes room for button */
   }
 
-  .header__description {
-    font-size: 18px;
+  .header__email--btn {
+    position: absolute;    /* button anchors to right side */
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 14px 28px;
+    z-index: 2;
   }
+
+  .header__email--btn:hover {  transform: translateY(-2px);  }
+ 
+  .header__customers--title{   margin-top: 48px; }
+  .header__img--wrapper { 
+    margin-top: 48px ; 
+    width: 100%; 
+    max-width: 512px; 
+    margin: 0 auto;}
+  
+  .header__customers--title { text-align: center; }
+  .header__customers--logo { max-width: 100%; margin-top: 48px; padding-right: 0;}
+
+  /***------***Section***------***/
+  .section__title { font-size: 44px; }
+  .section__para  { font-size: 20px; }
+  
 }
+
+/****-----------------****For smaller devices - 768px - and below****--------------****/
 
 @media (max-width: 768px) {
 
-  .starts__row {
-    padding: 50px 30px;
-  }
+  body.menu--open .nav__links{ dispplay: flex; }
+  nav { position: relative; z-index: 100; }
+  body { background-color: #fff; }
 
-  .start__row {
-    flex-direction: column;
-    text-align: center;
-    gap: 28px;
+  /***------***Navigation***------***/
+  .nav__links li {
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 14px 0;
   }
-
-  .start__quote {
-    font-size: 1.25rem;
-  }
+ 
+  .nav__links li:last-child {border-bottom: none; padding-top: 20px;}
+  .nav__link--primary { display: inline-block; padding: 12px 32px;}
+  .btn__menu { display: block; }
   .nav__links {
-    display: none;
-  }
-
-  .nav__toggle {
-    display: block;
-  }
-
-  .header__row {
-    grid-template-columns: 1fr;
-    gap: 48px
-  }
-
-  .header__figure {
-    order: -1;
-  }
-
-  .header__content {
-    max-width: 100%;
-  }
-
-  .header__title {
-    font-size: 36px;
-    text-align: center;
-  }
-
-  .header__description {
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .header__form {
+    display: none; /* hidden; JS adds .nav--open to show it */
     flex-direction: column;
-    gap: 16px;
+    align-items: flex-start;
+    gap: 0;
+    position: absolute;
+    top: 100%;   /* sits just below the nav bar */
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    padding: 16px 24px 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    z-index: 999;
   }
 
-  .header__input {
-    padding: 20px 32px;
-    padding-right: 32px;
-  }
+  .menu {
+  display: none;
+  position: fixed;       /* fixed = covers entire viewport regardless of scroll */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;         /* sits on top of everything */
+  background: #ffffff;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
 
-  .header__btn {
-    position: static;
-    transform: none;
+.menu__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 32px;
+  gap: 0;
+}
+/* JS adds this class → menu appears */
+.menu.menu--open {
+  display: flex;
+}
+ 
+/* Close button: top-right corner */
+.btn__menu--close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  padding: 8px;
+  color: #243e63;
+}
+ 
+/* Each menu link */
+.menu__link {
+  font-size: 20px;
+  font-weight: 600;
+  color: #243e63;
+  text-decoration: none;
+  padding: 16px 0;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+  transition: color 0.2s ease;
+}
+ 
+.menu__link:last-child {
+  border-bottom: none;
+}
+ 
+.menu__link:hover {
+  color: #6415ff;
+}
+ 
+/* Sign Up link — purple pill */
+.menu__link--primary {
+  margin-top: 16px;
+  background-color: #6415ff;
+  color: #ffffff;
+  padding: 14px 40px;
+  border-radius: 9999px;
+  width: auto;
+  border-bottom: none;
+}
+ 
+.menu__link--primary:hover {
+  background-color: #5011cc;
+  color: #ffffff;
+}
+ 
+  /* Prevent page from scrolling behind open menu */
+  body.no-scroll {  overflow: hidden; }
+  .header__img--wrapper { overflow: hidden; }
+
+  /***------***Section***------***/
+  section { padding: 0 20px; }
+  .section__title { font-size: 34px; }
+  .section__tag   { font-size: 22px; }
+  .section__para  { font-size: 18px; }
+
+  /***------***Container***------***/
+  .container { padding: 64px 24px;}
+ 
+ /** ── FEATURES SECTION ────────────────────────────────────────── **/
+  .feature { width: 50%; }
+
+  /** ── QUALITY SECTION ────────────────────────────────────────── **/
+  .quality__row { flex-direction: column;  align-items: flex-start;}
+  .quality__content,  .quality__img--wrapper {
     width: 100%;
   }
+  .quality__content { margin-right: 0; margin-bottom: 40px;}
+  .quality__img--wrapper { margin: 0; max-width: 100%; }
 
-  .header__btn:hover {
-    transform: translateY(-2px);
+ /** ── STEPS ───────────────────────────────────────────────── **/
+  #steps .step__row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .step__img--wrapper,.step__content { 
+    width: 100%;}
+  .step__img--wrapper {max-width: 480px;}
+  .step__content {padding: 32px 0 0;}
+  .step__grid {
+    width: 6rem;
+    height: 6rem;
   }
 
-  .header__customers {
-    text-align: center;
+  /** ── VALUES SECTION──────────────────────────────────────────────── **/
+  #values .values__row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .values__description,.values__img { width: 100%;  }
+  .values__description { padding: 0 0 40px;  }
+  .values__img { max-width: 360px; margin: 0 auto;  }
+ 
+  .values__list { flex-direction: column;  }
+ 
+  .value { margin-right: 0;}
+
+  /** ── PRICING SECTION─────────────────────────────────────────────── **/
+  .pricing__plans { flex-direction: column; align-items: center; gap: 24px; }
+ 
+  .plans { width: 100%; max-width: 400px; margin-right: 0; margin-top: 0; }
+ 
+  /* Undo the scale(1.03) on the featured card — looks weird in column */
+  .plans:nth-child(2) { transform: scale(1);  }
+
+  /** ── TESTIMONIALS SECTION────────────────────────────────────────── **/
+  .testimonials__row { flex-direction: column; align-items: flex-start; gap: 32px; }
+ 
+  .testimonials__img,
+  .testimonials__content {
+    width: 100%;
+  }
+ 
+  .testimonials__img { max-width: 320px; margin: 0 auto;   }
+  .testimonials__content {  padding-left: 0;  }
+
+  /** ── START SECTION─────────────────────────────────────────── **/
+  .start__container { padding: 64px 24px;  }
+  .start__row { flex-direction: column;  align-items: center;  text-align: center;  gap: 28px;  }
+ 
+  /* override the 50% widths — in column layout they need to be full */
+  .start__quote { width: 100%; font-size: 22px;  }
+ 
+  /* buttons also need to break out of 50% */
+  .start__button { width: 100%; max-width: 320px;}
+  .start__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    z-index: 3;
+    position: relative;
+  }
+ 
+  button.start__button.btn1 {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+ 
+  /* Blobs: on small screens they overflow weirdly — scale them down */
+  .start__blob--1 {
+    height: 12rem;
+    width: 12rem;
+    transform: translate(-3rem, 5rem);
+  }
+  .start__blob--2 {
+    height: 12rem;
+    width: 12rem;
+    transform: translate(3rem, -8rem);
   }
 
-  .header__customers-logo {
-    max-width: 100%;
+ /** ── FOOTER ──────────────────────────────────────────────── **/
+ footer { padding: 64px 24px; }
+  .row.footer__row { width: 100%;  }
+  .footer__columns { gap: 16px; }
+ 
+  /* Bottom: stack vertically instead of cramming 3 things on one line */
+  .footer__bottom { flex-direction: column; align-items: flex-start; gap: 24px;  }
+  .footer__socials { margin-left: 0;  }
+
+}
+
+
+/****------------FOR SMALLER DEVICES -******************
+************************************SCREEN WIDTH 640px or Smaller------------****/
+@media (max-width: 640px) {
+  .header__email { flex-direction: column;  height: auto;  }
+
+  .header__email--input, .header__email--btn {
+    position: static;
+  }
+  .header__email--input {
+    margin-bottom: 24px;
+    padding: 16px 0;
+    padding-left: 32px;
+    line-height: 1.5;
+  }
+  .header__email--btn {
+    width: 100%;
+    padding: 16px 0;
+    margin-top: 36px;
+    margin-bottom: 0px;
+    line-height: 1.5;
+  }
+  .header__customers--title {
+    font-size: 16px;
+    letter-spacing: 0.05em;
   }
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 24px;
+
+  section { padding: 0 16px; }
+  .section__title { font-size: 28px; }
+  .section__tag   { font-size: 18px; }
+  .section__para  { font-size: 16px; }
+ 
+  .container { padding: 48px 16px; }
+   
+  #header { padding: 64px 0 32px; }
+  header.container { padding: 0 20px; }
+
+  .nav__logo--title { font-size: 24px; }
+  .nav__logo--img  { width: 36px; height: 36px; }
+
+  /**** ── FEATURES SECTION ────────────────────────────────────────── ****/
+  .features { flex-direction: column;  }
+  .feature { width: 100%; padding: 16px 0; }
+  .feature__row { padding: 16px 0; }
+
+  /**** ── QUALITY SECTION ────────────────────────────────────────── ****/
+  .quality__btn { font-size: 18px;  padding: 10px 24px;  }
+ 
+  /**** ── STEPS SECTION ───────────────────────────────────────────────── ****/
+  .step__number { font-size: 32px; }
+  .step__title  { font-size: 22px; }
+  .step__para   { font-size: 16px; }
+
+ /**** ── VALUES SECTION──────────────────────────────────────────────── ****/
+  .value__name { font-size: 22px; }
+  .btn { font-size: 18px;  padding: 10px 24px;  }
+   
+/**** ── PRICING SECTION─────────────────────────────────────────────── ****/
+  .plan__price    { font-size: 52px; }
+  .plan__type     { font-size: 22px; }
+  .plan__target   { font-size: 22px; }
+  .plan__feature  { font-size: 20px; }
+  .plan__duration { font-size: 22px; }
+ 
+/**** ── TESTIMONIALS SECTION────────────────────────────────────────── ****/
+  .testimonial__title { font-size: 18px; }
+  .testimonial__para  { font-size: 14px; }
+  .testimonial__bottom {
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
   }
 
-  .nav__container {
-    padding: 0 24px;
-  }
+  /**** ── START SECTION─────────────────────────────────────────── ****/
+  .start__quote { font-size: 18px; }
 
-  #header {
-    padding: 64px 0 32px;
-  }
+ /**** ── FOOTER ──────────────────────────────────────────────── ****/
+ footer { padding: 48px 16px; }
+  .footer__columns { flex-direction: column;  }
+  .footer__column { margin-top: 32px;  }
+  .footer__divider {  margin: 40px 0; }
+  .footer__logo--text { font-size: 16px; }
+  .footer__copyright  { font-size: 13px; }
 
-  .header__title {
-    font-size: 30px;
-  }
-
-  .nav__logo-title {
-    font-size: 24px;
-  }
-
-  .nav__logo-img {
-    width: 40px;
-    height: 40px;
-  }
 }
+
