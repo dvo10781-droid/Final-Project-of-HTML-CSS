@@ -841,7 +841,7 @@ button {
  background: linear-gradient(135deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178) 100%);
 }
 
-/****TESTIMONIALS*****/
+/*******************************************TESTIMONIALS****************************/
 #testimonials .container{
   align-items: center;
   padding-top: 6rem;
@@ -855,7 +855,7 @@ button {
   margin: 0 auto;
   text-align: left;
 }
-.testimonials__row{
+#testimonials .row {
   margin-left: auto;
   margin-right: auto;
   max-width: 1280px;
@@ -867,10 +867,10 @@ button {
   gap: 48px;
 }
 
-.testimonials__img, .testimonials__content {
+.testimonials__img, .testimonials__discription {
   width: 50%;
 }
-.testimonials__content {
+.testimonials__discription {
   display: flex;
   flex-direction: column;
   padding-left: 64px;
