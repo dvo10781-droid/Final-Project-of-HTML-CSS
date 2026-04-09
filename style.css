@@ -253,68 +253,52 @@ header .row {
   width: 100%;
   max-width: 448px;
   height: 68px;
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 96px;
   position: relative;
+  display: flex;
   align-items: center;
 }
 
 .header__email--input {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
   width: 100%;
   border-radius: 500px;
   border: 2px solid rgb(229, 231, 235);
-  padding: 20px 192px 24px 32px;
-  color: rgb(36, 62, 99);
-  position: absolute;
-  font-size: 18px;
+  padding: 20px 180px 20px 32px;  /* right padding = room for button */
+  font-size: 16px;
   font-weight: 500;
-  top: 0;
-  bottom: 0;
+  color: rgb(36, 62, 99);
   z-index: 1;
-  transition: border-color 0.3s ease;
+  transition: border-color 300ms;
 }
 
 .header__email--input:hover {
-  border-color: #6415ff;
-  box-shadow: 0 0 0 3px rgba(100, 21, 255, 0.1);
-}
-
-.header__email--input::placeholder {
-  color: #a0aec0;
-  font-weight: 500;
+  border-color: rgba(160, 174, 192);
 }
 
 .header__email--btn {
+  position: absolute;
+  right: 6px;
+  top: 50%;                          
+  transform: translateY(-50%);      
   z-index: 2;
-  margin: 8px;
-  height: calc(100%-16px);
   border-radius: 500px;
-  width: 160px;
   border: none;
   background-color: #6415ff;
   color: #fff;
-  position: absolute;
   font-weight: 700;
-  font-size: 18px;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 18px 48px;
+  font-size: 16px;
+  padding: 14px 28px;
   cursor: pointer;
-  transition: all 0.3s ease;
   white-space: nowrap;
+  transition: all 0.3s ease;
 }
 
 .header__email--btn:hover {
-  background-color: #5011cc;
-  transform: translateY(-50%) translateY(-2px);
-  box-shadow: 0 10px 25px rgba(100, 21, 255, 0.3);
+  background-color: rgba(60, 15, 153);
+  transform: translateY(calc(-50% - 2px));  
 }
 
-.header__email--btn:active {
-  transform: translateY(-50%) translateY(0);
-}
 
  /*******Header - Customers */
 
@@ -867,10 +851,10 @@ button {
   gap: 48px;
 }
 
-.testimonials__img, .testimonials__discription {
+.testimonials__img, .testimonials__description {
   width: 50%;
 }
-.testimonials__discription {
+.testimonials__description {
   display: flex;
   flex-direction: column;
   padding-left: 64px;
@@ -1270,7 +1254,9 @@ h1 {
     z-index: 2;
   }
 
-  .header__email--btn:hover {  transform: translateY(-2px);  }
+ .header__email--btn:hover {
+    transform: translateY(calc(-50% - 2px));
+  }
  
   .header__customers--title{   margin-top: 48px; }
   .header__img--wrapper { 
@@ -1286,9 +1272,23 @@ h1 {
   .section__title { font-size: 44px; }
   .section__para  { font-size: 20px; }
   
+/***-----***Features section***------***/
+  .feature {   width: 50%;  }
+
+  #features .section__tag,
+  #features .section__title,
+  #features .section__para {
+    text-align: center;
+  }
+
+  /***------***Pricing Section***-----***/
+  .pricing__plans {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-/****-----------------****For smaller devices - 768px - and below****--------------****/
+/****-----------------****FOR SMALLER DEVICES 768px & SMALLER****-----------------------****/
 
 @media (max-width: 768px) {
 
@@ -1535,6 +1535,7 @@ h1 {
     margin-bottom: 0px;
     line-height: 1.5;
   }
+  .header__email--btn:hover {transform: none;}
   .header__customers--title {
     font-size: 16px;
     letter-spacing: 0.05em;
