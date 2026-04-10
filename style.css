@@ -570,6 +570,7 @@ g {
   width: 48px;
   height: 48px;
 }
+.value:nth-child(1) { margin-right: 32px; margin-top: 32px;  }
 .value__title {
   display: flex;
   align-items: center;
@@ -616,7 +617,7 @@ g {
   cursor: pointer;
 }
 
-/****PRICING*****/
+/*******************************************PRICING****************************/
 #pricing .pricing__row {
   display: flex;
   flex-direction: column;
@@ -850,7 +851,10 @@ button {
   justify-content: space-between;
   gap: 48px;
 }
-
+#testimonials .container {
+  padding-top: 6rem;
+  padding-bottom: 5rem;
+}
 .testimonials__img, .testimonials__description {
   width: 50%;
 }
@@ -998,9 +1002,7 @@ button {
   justify-content: center;
 }
 
-.start__quote, .start__buttons {
-  width: 50%;
-}
+.start__quote, .start__buttons { width: 50%; }
 
 .start__quote {
   font-size: 30px;
@@ -1014,42 +1016,59 @@ button {
   display: flex;
   justify-content: flex-end;
 }
+button {
+  cursor: pointer;
+  border: none;
+}
+.btn {
+  background-color: #6415ff;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 500px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgba(80, 17, 204);
+}
 
 .start__button {
-  font-weight: 700;
-  font-size: 16px;
-  color:rgb(247, 250, 252);
-  line-height: 1.5;
-  margin: 1px;
   padding: 20px 40px;
   border-radius: 500px;
-  z-index: 2;
-}
-
-button.start__button.btn1 {
-  color: #f7fafc;
   font-size: 16px;
-  background: #f56565;
-  margin: 1px 32px 1px 1px;
-  padding: 20px 40px;
+  color: #f7fafc;
+  line-height: 1.5;
+  letter-spacing: 0.025;
+  margin: 1px;
+  z-index: 2;
+
 }
-.start__button:nth-child(1){
+button.start__button.btn1 {
   box-shadow: rgba(0, 0, 0,0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   margin-right: 32px;
-  background: rgb(245, 101, 101);
-  transition: 300ms; 
+  background: #f56565;
+  transition: all 300ms ease; 
 }
 
 button.start__button.btn2 {
   background: #6515ff;
   color: #f6fafc;
   margin: 1px;
-  padding: 20px 40px;
-  border-style: 2px solid rgb(160, 174, 192);
-  transition: 300ms;
+  border: 1px solid rgb(160, 174, 192);
+  transition: all 300ms ease;
 }
 
-/*****FOOTER*****/
+
+.start__button.btn2:hover {
+  background-color: rgba(247, 250, 252);
+  color: rggb(100, 21, 255);
+}
+
+
+/*****-------------*******FOOTER***---------------*****/
 footer {
   background-color: rgb(100, 21, 255);
   padding: 96px 32px;
@@ -1178,7 +1197,9 @@ footer {
 }
 
 
-/**************************RESPONSIVE DESIGN - MEDIA QUERIES**************************/
+/***** ───────────────────────────── RESPONSIVE - MEDIA  ───────────────────────────────────
+─────────────────────────────────── ****** 1280px & SMALLER─────────────────────────────────── ******─────────────────────────────────── ******/
+
 @media (max-width: 1280px) {
 h1 {
   font-size: 42px;
@@ -1192,9 +1213,11 @@ h1 {
   .header__img { max-width: 512px; }
 
 }
+.testimonials__description { width: calc(100%-40%);}
 
-/*----------------*For SMALL DEVICES*************
-                    *************************SCREEN WITH 1024PX------------------*/
+/***** ───────────────────────────── FOR SMALLER DEVICES 1024px & SMALLER ───────────────────────────────────
+─────────────────────────────────── ******─────────────────────────────────── ******─────────────────────────────────── ******/
+
 @media (max-width: 1024px) {
 
   h1{  font-size: 32px;  }
@@ -1269,30 +1292,60 @@ h1 {
   .header__customers--logo { max-width: 100%; margin-top: 48px; padding-right: 0;}
 
   /***------***Section***------***/
-  .section__title { font-size: 44px; }
-  .section__para  { font-size: 20px; }
+  .section__title { font-size: 36px; }
+  .section__para  { font-size: 16px; }
+  .section__tag { font-size: 18px;  }
   
-/***-----***Features section***------***/
-  .feature {   width: 50%;  }
+/***-----***FEATURES section***------***/
+.features { max-width: 768px; }
+.feature {   width: 50%;  }
 
   #features .section__tag,
   #features .section__title,
   #features .section__para {
     text-align: center;
   }
+ /***-----***VALUES section***------***/ 
+  .values__list { 
+    max-width: 20rem; 
+    flex-direction: column;  
+  }
+  .value { margin-top: 2.5rem; }
 
-  /***------***Pricing Section***-----***/
+  /***------***PRICING Section***-----***/
   .pricing__plans {
     flex-direction: column;
     align-items: center;
   }
-}
+  .plans { margin-right: 0px; margin-top: 64px;}
 
-/****-----------------****FOR SMALLER DEVICES 768px & SMALLER****-----------------------****/
+  /***-------**TESTIMONIALS****--------***/
+#testimonials .container {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+} 
+.testimonials__description { padding-left: 48px; }
+
+  /***-------****STARTs****--------***/
+#starts .container {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.start__row { flex-direction: column; }
+.start__quote { text-align: center; width: 100%; max-width: 512px; }
+.start__buttons { width: auto; margin-top: 24px; }
+.start__button { padding: 16px 32px; }
+
+  /***-------***********FOOTER****************--------***/
+footer {padding: 80px 32px;}
+
+}
+/******* ───────────────────────────── FOR SMALLER DEVICES 768px & SMALLER ───────────────────────────────────
+─────────────────────────────────── ******─────────────────────────────────── ******─────────────────────────────────── ******/
 
 @media (max-width: 768px) {
 
-  body.menu--open .nav__links{ dispplay: flex; }
+  body.menu--open .nav__links{ display: flex; }
   nav { position: relative; z-index: 100; }
   body { background-color: #fff; }
 
@@ -1371,16 +1424,12 @@ h1 {
   border-bottom: 1px solid #f0f0f0;
   transition: color 0.2s ease;
 }
- 
 .menu__link:last-child {
   border-bottom: none;
 }
- 
 .menu__link:hover {
   color: #6415ff;
 }
- 
-/* Sign Up link — purple pill */
 .menu__link--primary {
   margin-top: 16px;
   background-color: #6415ff;
@@ -1390,83 +1439,91 @@ h1 {
   width: auto;
   border-bottom: none;
 }
- 
 .menu__link--primary:hover {
   background-color: #5011cc;
   color: #ffffff;
 }
  
-  /* Prevent page from scrolling behind open menu */
   body.no-scroll {  overflow: hidden; }
   .header__img--wrapper { overflow: hidden; }
 
+  .quality__row, .values__row {  flex-direction: column-reverse;    }
+
+  .quality__content, .quality__img--wrapper, 
+  .step__content, .step__img--wrapper, 
+  .values__description, .values__img, 
+  .testimonials__description, .testimonials__img {
+    width: 100%;
+    max-width: 448px;
+  }
+
+  .quality__content, .step__content, 
+  .values__description, .testimonials__description {
+    padding: 0;
+    margin: 64px 0px 0px 0px;
+    text-align: center;
+  }
+  
+
   /***------***Section***------***/
   section { padding: 0 20px; }
-  .section__title { font-size: 34px; }
-  .section__tag   { font-size: 22px; }
-  .section__para  { font-size: 18px; }
+  .section__tag, .section__title, .section__para { text-align: center;}
+  .section__title { font-size: 36px; }
+  .section__tag   { font-size: 18px; }
+  .section__para  { font-size: 14px; }
 
   /***------***Container***------***/
   .container { padding: 64px 24px;}
  
- /** ── FEATURES SECTION ────────────────────────────────────────── **/
-  .feature { width: 50%; }
+ /** ── FEATURES SECTION ─────────────────────────── **/
+  .features { justify-content: center; }
+ 
+  .feature { width: auto; max-width: 384px; }
 
-  /** ── QUALITY SECTION ────────────────────────────────────────── **/
-  .quality__row { flex-direction: column;  align-items: flex-start;}
-  .quality__content,  .quality__img--wrapper {
-    width: 100%;
-  }
-  .quality__content { margin-right: 0; margin-bottom: 40px;}
-  .quality__img--wrapper { margin: 0; max-width: 100%; }
+  /** ── QUALITY SECTION ───────────────────────── **/
 
- /** ── STEPS ───────────────────────────────────────────────── **/
-  #steps .step__row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .step__img--wrapper,.step__content { 
-    width: 100%;}
-  .step__img--wrapper {max-width: 480px;}
+ /** ── STEPS ─────────────────────────────── **/
+  #steps .step__row {  flex-direction: column;   }
   .step__content {padding: 32px 0 0;}
-  .step__grid {
-    width: 6rem;
-    height: 6rem;
-  }
+  .step__grid { 
+    width: 6rem; 
+    height: 6rem;  }
+  .step { 
+    flex-direction: column; 
+    align-items: center; }
 
-  /** ── VALUES SECTION──────────────────────────────────────────────── **/
-  #values .values__row {
-    flex-direction: column;
-    align-items: flex-start;
+  /** ── VALUES SECTION───────────────────── **/
+  .values__list {
+    margin-left: auto;
+    margin-right: auto;
   }
-  .values__description,.values__img { width: 100%;  }
-  .values__description { padding: 0 0 40px;  }
-  .values__img { max-width: 360px; margin: 0 auto;  }
- 
-  .values__list { flex-direction: column;  }
- 
-  .value { margin-right: 0;}
+  .value:nth-child(1) {  margin-right:0px;  }
+  .value:nth-child(2) {  margin-top: 32px;  }
 
-  /** ── PRICING SECTION─────────────────────────────────────────────── **/
+  .value { 
+    margin-right: 0px; 
+    align-items: center;
+   }
+
+
+  /** ── PRICING SECTION────────────────────── **/
   .pricing__plans { flex-direction: column; align-items: center; gap: 24px; }
  
-  .plans { width: 100%; max-width: 400px; margin-right: 0; margin-top: 0; }
+  .plans { width: 100%; max-width: 400px; margin-right: 0; margin-top: 64px; }
  
   /* Undo the scale(1.03) on the featured card — looks weird in column */
   .plans:nth-child(2) { transform: scale(1);  }
 
-  /** ── TESTIMONIALS SECTION────────────────────────────────────────── **/
-  .testimonials__row { flex-direction: column; align-items: flex-start; gap: 32px; }
- 
-  .testimonials__img,
-  .testimonials__content {
+  /** ── TESTIMONIALS SECTION───────────────── **/
+  #testimonials .row { flex-direction: column; }
+  .testimonials__description {
+    padding-left: 0;
     width: 100%;
   }
- 
   .testimonials__img { max-width: 320px; margin: 0 auto;   }
-  .testimonials__content {  padding-left: 0;  }
 
-  /** ── START SECTION─────────────────────────────────────────── **/
+
+  /** ── START SECTION──────────────────────── **/
   .start__container { padding: 64px 24px;  }
   .start__row { flex-direction: column;  align-items: center;  text-align: center;  gap: 28px;  }
  
@@ -1474,7 +1531,7 @@ h1 {
   .start__quote { width: 100%; font-size: 22px;  }
  
   /* buttons also need to break out of 50% */
-  .start__button { width: 100%; max-width: 320px;}
+  .start__button { width: auto; max-width: none;}
   .start__buttons {
     display: flex;
     flex-direction: column;
@@ -1502,8 +1559,8 @@ h1 {
     transform: translate(3rem, -8rem);
   }
 
- /** ── FOOTER ──────────────────────────────────────────────── **/
- footer { padding: 64px 24px; }
+ /** ── FOOTER ─────────────────── **/
+
   .row.footer__row { width: 100%;  }
   .footer__columns { gap: 16px; }
  
@@ -1514,8 +1571,9 @@ h1 {
 }
 
 
-/****------------FOR SMALLER DEVICES -******************
-************************************SCREEN WIDTH 640px or Smaller------------****/
+/******* ───────────────────────────── FOR SMALL SCREEN DEVICES 640px & SMALLER ───────────────────────────────────
+─────────────────────────────────── ******─────────────────────────────────── ******─────────────────────────────────── ******/
+
 @media (max-width: 640px) {
   .header__email { flex-direction: column;  height: auto;  }
 
@@ -1540,8 +1598,17 @@ h1 {
     font-size: 16px;
     letter-spacing: 0.05em;
   }
+  .start__quote { font-size: 24px }
+  .start__buttons { flex-direction: column; }
+  button.start__button.btn1, button.start__button.btn2 {  margin: 0; }
+  button.start__button.btn1 { margin-right: 0; }
+  button.start__button.btn2 { margin-top: 16px; }
+  .start__button { padding: 12px 24px; font-size: 14px; width: auto; max-width: none; min-width:160px; }
+  .btn1, .btn2 { line-height: 1.5 }
 }
 
+/******* ───────────────────────────── FOR SMALL SCREEN DEVICES 468px  ───────────────────────────────────
+─────────────────────────────────── ******─────────────────────────────────── ******─────────────────────────────────── ******/
 @media (max-width: 480px) {
 
   section { padding: 0 16px; }
@@ -1591,7 +1658,7 @@ h1 {
   }
 
   /**** ── START SECTION─────────────────────────────────────────── ****/
-  .start__quote { font-size: 18px; }
+  .start__quote { font-size: 16px; }
 
  /**** ── FOOTER ──────────────────────────────────────────────── ****/
  footer { padding: 48px 16px; }
